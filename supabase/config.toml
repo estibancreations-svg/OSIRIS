@@ -1,0 +1,4 @@
+project_id = "yqealeekngxooyoemfba"
+
+[functions.sync-world-signals]
+verify_jwt = true
