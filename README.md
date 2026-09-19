@@ -1,12 +1,14 @@
 # OSIRIS Logistics Intelligence Integration
 
-This repository implements the governed adapter for bringing selected OSIRIS signals into Estibancreations' future **logistics T.H.E.L.M.A.** system as a risk overlay.
+This repository implements the governed adapter for bringing selected OSIRIS signals into Estibancreations' **logistics T.H.E.L.M.A.** system as a risk overlay.
 
 It is not an unrestricted fork of OSIRIS and it does not change the identity of the enterprise operations-orchestrator in `estibancreations-svg/-THELMA-AI`.
 
 ## Current status
 
-**IMPLEMENTED_UNVERIFIED — integration foundation deployed; consuming logistics runtime attachment pending.**
+**IMPLEMENTED_UNVERIFIED — integration foundation deployed; target runtime located, consumer attachment pending.**
+
+The canonical logistics T.H.E.L.M.A. runtime has been located and scaffolded at **[`estibancreations-svg/THELMA-Global-Link-Logistics`](https://github.com/estibancreations-svg/THELMA-Global-Link-Logistics)** — a Land/Air/Sea/Orbital fleet-command system originally built for a Google Gemini 3 hackathon, later informally referred to as "Motive Next." This resolves the "recover or designate the canonical runtime" blocker noted below. See that repository's README for full history, current build status, and open questions.
 
 Implemented:
 
@@ -20,12 +22,13 @@ Implemented:
 
 Still required before production certification:
 
-1. Recover or designate the canonical logistics T.H.E.L.M.A. runtime.
-2. Add real U.S. transit corridors.
-3. Run an authenticated live sync and verify stored matching signals.
-4. Configure a 30–60 minute scheduler using a backend secret stored in Supabase Vault.
-5. Deploy an Estibancreations-controlled OSIRIS data runtime pinned to an audited upstream commit.
-6. Review the terms for every upstream data source used commercially.
+1. ~~Recover or designate the canonical logistics T.H.E.L.M.A. runtime.~~ **Done (2026-09-18)** — see `THELMA-Global-Link-Logistics` above.
+2. Wire an actual consumer read against `osiris_world_signals` from the THELMA-Global-Link-Logistics codebase (that repo's backend is itself incomplete — see its README's "Current known state" — so this may need to wait on its own stabilization work).
+3. Add real U.S. transit corridors.
+4. Run an authenticated live sync and verify stored matching signals.
+5. Configure a 30–60 minute scheduler using a backend secret stored in Supabase Vault.
+6. Deploy an Estibancreations-controlled OSIRIS data runtime pinned to an audited upstream commit.
+7. Review the terms for every upstream data source used commercially.
 
 ## Source project
 
@@ -52,7 +55,7 @@ active-corridor relevance filter
 Supabase osiris_world_signals
         |
         v
-future logistics T.H.E.L.M.A. consumer
+THELMA-Global-Link-Logistics consumer
 ```
 
 The logistics runtime reads the normalized table, not OSIRIS directly. That keeps source replacement, outages and schema changes behind one controlled boundary.
