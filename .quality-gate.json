@@ -1,0 +1,15 @@
+{
+  "repository": "estibancreations-svg/OSIRIS",
+  "scope": "repository integrity plus applicable build or offline production tests",
+  "required_files": [
+    "README.md",
+    "supabase/functions/sync-world-signals/index.ts",
+    "supabase/config.toml"
+  ],
+  "jsonc_files": [
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "deno.json"
+  ]
+}
